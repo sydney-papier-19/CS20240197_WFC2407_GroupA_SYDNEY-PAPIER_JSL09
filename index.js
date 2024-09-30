@@ -1,4 +1,6 @@
 //BACKGROUND IMAGE SECTION
+//used Unsplash API to get random images
+//fetches a random image from Unsplash 
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(res => res.json())
     .then(data => {
@@ -14,6 +16,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
 
 // CRYPTO SECTION
+//Used COinGecko API to get the cryptocurrency data
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => {
         if (!res.ok) {
@@ -43,6 +46,7 @@ function getCurrentTime() {
 setInterval(getCurrentTime, 1000)
 
 //WEATHER SECTION
+//OpenWeatherMap API to get weather info
 navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
         .then(res => {
